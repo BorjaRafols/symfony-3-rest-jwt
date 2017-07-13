@@ -2,3 +2,7 @@
 
  sudo setfacl -dR -m u:"$HTTPDUSER":rwX -m u:$(whoami):rwX var
  sudo setfacl -R -m u:"$HTTPDUSER":rwX -m u:$(whoami):rwX var
+ 
+ mkdir var/data && cd var/data && sqlite3 starter
+ 
+  php bin/console doctrine:schema:update --force

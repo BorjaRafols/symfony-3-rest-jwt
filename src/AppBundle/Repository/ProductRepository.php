@@ -6,12 +6,19 @@ use Doctrine\ORM\EntityRepository;
 
 class ProductRepository extends EntityRepository {
     
-    public function findAllOrderedByName() {
+    public function create() {
         
-        return $this->getEntityManager()->createQuery(
-            'SELECT p from AppBundle:Product p ORDER BY p.name ASC'
-        )
-        ->getResult();
+            
+            
+            return $product;
+        }
+        
+        public function findAllOrderedByName() {
+            
+            return $this->getEntityManager()->createQuery(
+                'SELECT p from AppBundle:Product p ORDER BY p.name ASC'
+            )
+            ->getResult();
         
     }
     
